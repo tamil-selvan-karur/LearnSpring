@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="helloBean" class="com.learnspring.learn.learn_spring.HelloWorld">
+		<property name="age" value="21" />
+		<property name="name" value="Tamil" />
+	</bean>
+	
+	<bean id="secondBean" class="com.learnspring.learn.learn_spring.SecondBean">
+		<!-- <property name="balance" value="21000" />
+		<property name="bank" value="Karur Vysiya Bank" /> -->
+		<constructor-arg index="0" value="KVB"/>
+		<constructor-arg index="1" value="20000"/>
+	</bean>
+
+</beans>
