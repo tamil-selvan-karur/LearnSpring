@@ -6,7 +6,13 @@
 	<bean id="triangle"
 		class="com.learnspring.learn.learn_spring.Triangle">
 		<property name="pointA" ref="pointA" />
-		<property name="pointB" ref="pointB" />
+		<property name="pointB">
+			<bean id="pointB"
+				class="com.learnspring.learn.learn_spring.Point">
+				<property name="x" value="-20" />
+				<property name="y" value="0" />
+			</bean>
+		</property>
 		<property name="pointC" ref="pointC" />
 	</bean>
 
@@ -14,10 +20,7 @@
 		<property name="x" value="0" />
 		<property name="y" value="0" />
 	</bean>
-	<bean id="pointB" class="com.learnspring.learn.learn_spring.Point">
-		<property name="x" value="-20" />
-		<property name="y" value="0" />
-	</bean>
+
 	<bean id="pointC" class="com.learnspring.learn.learn_spring.Point">
 		<property name="x" value="20" />
 		<property name="y" value="0" />

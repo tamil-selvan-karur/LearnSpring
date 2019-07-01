@@ -1,9 +1,15 @@
 package com.learnspring.learn.learn_spring;
 
-public class Triangle {
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class Triangle implements ApplicationContextAware, BeanNameAware {
 	Point pointA;
 	Point pointB;
 	Point pointC;
+	ApplicationContext context = null;
 
 	public Point getPointA() {
 		return pointA;
@@ -33,5 +39,15 @@ public class Triangle {
 		System.out.println("Point A (" + pointA.getX() + "," + pointA.getY() + ")");
 		System.out.println("Point B (" + pointB.getX() + "," + pointB.getY() + ")");
 		System.out.println("Point C (" + pointC.getX() + "," + pointC.getY() + ")");
+	}
+
+	public void setBeanName(String name) {
+		System.out.println("Bean name is : "+name);
+		
+	}
+
+	public void setApplicationContext(ApplicationContext context) throws BeansException {
+		this.context = context;
+		
 	}
 }
