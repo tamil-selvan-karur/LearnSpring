@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class TriangleList implements InitializingBean, DisposableBean {
+public class TriangleList implements InitializingBean, DisposableBean, Shape {
 
 	private List<Point> points;
 
@@ -18,6 +18,7 @@ public class TriangleList implements InitializingBean, DisposableBean {
 	}
 
 	public void draw() {
+		System.out.println("Drawing Triangle :");
 		for (Point point : points) {
 			System.out.println("Point (" + point.getX() + "," + point.getY() + ")");
 		}

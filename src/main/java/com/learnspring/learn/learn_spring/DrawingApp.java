@@ -17,6 +17,7 @@ public class DrawingApp {
 		context.registerShutdownHook();
 		TriangleList triangle = (TriangleList) context.getBean("triangle");
 		triangle.draw();
+		context.close();
 
 	}
 }

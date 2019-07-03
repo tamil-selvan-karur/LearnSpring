@@ -5,7 +5,7 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Triangle implements ApplicationContextAware, BeanNameAware {
+public class Triangle implements ApplicationContextAware, BeanNameAware, Shape {
 	Point pointA;
 	Point pointB;
 	Point pointC;
@@ -43,7 +43,6 @@ public class Triangle implements ApplicationContextAware, BeanNameAware {
 
 	public void setBeanName(String name) {
 		System.out.println("Bean name is : "+name);
-		
 	}
 
 	public void setApplicationContext(ApplicationContext context) throws BeansException {

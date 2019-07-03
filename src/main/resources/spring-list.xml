@@ -1,22 +1,23 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd" default-init-method="myInit" default-destroy-method="myDestroy">
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+	default-init-method="myInit" default-destroy-method="myDestroy">
 
 	<bean id="triangle"
 		class="com.learnspring.learn.learn_spring.TriangleList">
 		<property name="points">
 			<list>
-				<ref bean="pointA"/>
-				<ref bean="pointB"/>
-				<ref bean="pointC"/>
+				<ref bean="pointA" />
+				<ref bean="pointB" />
+				<ref bean="pointC" />
 			</list>
 		</property>
 	</bean>
 
 	<bean id="pointA" class="com.learnspring.learn.learn_spring.Point">
-		<property name="x" value="0" />
-		<property name="y" value="0" />
+		<property name="x" value="${pointA.pointX}" />
+		<property name="y" value="${pointA.pointY}" />
 	</bean>
 
 	<bean id="pointB" class="com.learnspring.learn.learn_spring.Point">
@@ -28,7 +29,15 @@
 		<property name="x" value="20" />
 		<property name="y" value="0" />
 	</bean>
-	
-	<bean class="com.learnspring.learn.learn_spring.DisplayNameBeanPostProcessor"/>
+
+	<bean
+		class="com.learnspring.learn.learn_spring.DisplayNameBeanPostProcessor" />
+
+	<bean class="com.learnspring.learn.learn_spring.MyBeanFactoryPP" />
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="pointsconfig.properties" />
+	</bean>
 
 </beans>
