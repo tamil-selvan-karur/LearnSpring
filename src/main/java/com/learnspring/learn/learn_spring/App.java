@@ -14,6 +14,6 @@ public class App {
 		context.registerShutdownHook();
 		Shape shape = (Shape) context.getBean("circle");
 		shape.draw();
-		
+//		System.out.println(context.getMessage("greeting", null, "Defaul Greeting", null));
 	}
 }
